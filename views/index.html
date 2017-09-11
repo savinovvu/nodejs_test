@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StartPage</title>
+    <script type="text/javascript" src="/node_modules/jquery/dist/jquery.js" async></script>
+    <script type="text/javascript" src="/node_modules/datatables.net/js/jquery.dataTables.js" async></script>
+    <script type="text/javascript" src="/node_modules/datatables.net-bs/js/dataTables.bootstrap.js" async></script>
+
+
+    <script src="js/ajax.js" type="text/javascript" async></script>
+    <script src="js/service.js" type="text/javascript" async></script>
+    <script src="js/view.js" type="text/javascript" async></script>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="/node_modules/datatables.net-bs/css/dataTables.bootstrap.css">
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6">
+            <ul>
+                <li>
+                    <ul>
+                        <p class="text-center">Получить и сохранить</p>
+                        <li class="row">
+                            <div class="col-xs-3">
+                                <button class="btn btn-success ">Число</button>
+                            </div>
+                            <div class="col-xs-9"></div>
+                        </li>
+                        <li class="row">
+                            <div class="col-xs-3">
+                                <button class="btn btn-success">Строку</button>
+                            </div>
+                            <div class="col-xs-9"></div>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <ul><p class="text-center">Достать из базы</p>
+                        <li class="row">
+                            <div class="col-xs-3">
+                                <button class="btn btn-success ">Число</button>
+                            </div>
+                            <div class="col-xs-9">
+                                <div class="input-group">
+                                    <input type="number" class="form-control" placeholder="нижняя граница">
+                                </div>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" placeholder="верхняя граница">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="row">
+                            <div class="col-xs-3">
+                                <button class="btn btn-success">Строку</button>
+                            </div>
+
+
+                            <div class="col-xs-9">
+                                <div class="input-group">
+                                    <input type="number" class="form-control" placeholder="количество букв">
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+
+            </ul>
+        </div>
+        <div class="col-xs-6">
+
+            <table id="entityT" class="table table-bordered table-stripped table-condensed">
+
+                <thead>
+                <tr class="success">
+                    <td>id</td>
+                    <td>Число или строка</td>
+                </tr>
+                </thead>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
