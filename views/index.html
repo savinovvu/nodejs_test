@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>StartPage</title>
-    <script type="text/javascript" src="/node_modules/jquery/dist/jquery.js" async></script>
-    <script type="text/javascript" src="/node_modules/datatables.net/js/jquery.dataTables.js" async></script>
-    <script type="text/javascript" src="/node_modules/datatables.net-bs/js/dataTables.bootstrap.js" async></script>
+    <script type="text/javascript" src="jquery/dist/jquery.js" async></script>
+    <script type="text/javascript" src="datatables.net/js/jquery.dataTables.js" async></script>
+    <script type="text/javascript" src="datatables.net-bs/js/dataTables.bootstrap.js" async></script>
 
 
     <script src="js/ajax.js" type="text/javascript" async></script>
@@ -28,13 +28,13 @@
                         <p class="text-center">Получить и сохранить</p>
                         <li class="row">
                             <div class="col-xs-3">
-                                <button class="btn btn-success ">Число</button>
+                                <button class="btn btn-success" onclick="getGeneratedNumber()">Число</button>
                             </div>
                             <div class="col-xs-9"></div>
                         </li>
                         <li class="row">
                             <div class="col-xs-3">
-                                <button class="btn btn-success">Строку</button>
+                                <button class="btn btn-success" onclick="getGeneratedString()">Строку</button>
                             </div>
                             <div class="col-xs-9"></div>
                         </li>
@@ -45,26 +45,26 @@
                     <ul><p class="text-center">Достать из базы</p>
                         <li class="row">
                             <div class="col-xs-3">
-                                <button class="btn btn-success ">Число</button>
+                                <button class="btn btn-success" onclick="getBDNumber()">Число</button>
                             </div>
                             <div class="col-xs-9">
                                 <div class="input-group">
-                                    <input type="number" class="form-control" placeholder="нижняя граница">
+                                    <input id="numberFrom" type="number" class="form-control" placeholder="нижняя граница">
                                 </div>
                                 <div class="input-group">
-                                    <input type="number" class="form-control" placeholder="верхняя граница">
+                                    <input id="numberTo" type="number" class="form-control" placeholder="верхняя граница">
                                 </div>
                             </div>
                         </li>
                         <li class="row">
                             <div class="col-xs-3">
-                                <button class="btn btn-success">Строку</button>
+                                <button class="btn btn-success" onclick="getBDString()">Строку</button>
                             </div>
 
 
                             <div class="col-xs-9">
                                 <div class="input-group">
-                                    <input type="number" class="form-control" placeholder="количество букв">
+                                    <input id="numberLetters" type="number" class="form-control" placeholder="количество букв" >
                                 </div>
 
                             </div>

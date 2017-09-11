@@ -6,7 +6,7 @@ class Controller {
         const router = express.Router();
 
         router.get('/', function (req, res, next) {
-            res.send('respond with a 666');
+            res.send('getGeneratedNumber');
         });
         return router;
     }
@@ -15,25 +15,28 @@ class Controller {
         const router = express.Router();
 
         router.get('/', function (req, res, next) {
-            res.send('respond with a 2');
+            res.send('getGeneratedString');
         });
         return router;
     }
 
-    getBDNumber(fromNumber, toNumber){
+    getBDNumber(){
         const router = express.Router();
 
         router.get('/', function (req, res, next) {
-            res.send('respond with a 2');
+            let numberFrom = req.param("numberFrom");
+            let numberTo = req.param("numberTo");
+            res.send(`[${numberFrom},${numberTo}]`);
         });
         return router;
     }
 
-    getBDString(lengthString){
+    getBDString(){
         const router = express.Router();
 
         router.get('/', function (req, res, next) {
-            res.send('respond with a 2');
+            let numberLetters = req.param("number");
+            res.send(numberLetters);
         });
         return router;
     }

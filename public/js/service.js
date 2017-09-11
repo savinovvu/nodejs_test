@@ -1,40 +1,28 @@
-/*var ajaxAPI = {
+function getGeneratedNumber() {
+    send(ajaxAPI.generate.number, "GET");
+}
 
-    "generate": {
-        "number": "/getGeneratedNumber",
-        "string": "/getGeneratedString"
-    },
-    "bd": {
-        "number": "/getBDNumber",
-        "string": "/getBDString"
+function getGeneratedString() {
+    send(ajaxAPI.generate.string, "GET");
+}
+
+function getBDNumber() {
+    var numberFrom = $("#numberFrom").val();
+    var numberTo = $("#numberTo").val();
+    if (numberFrom > numberTo) {
+        alert("некорректный диапазон выборки, переставьте местами значения");
+        return;
     }
-};*/
 
+    send(ajaxAPI.bd.number + `?numberFrom=${numberFrom}&numberTo=${numberTo}`, "GET");
+}
 
+function getBDString() {
+    var numberLetters = $("#numberLetters").val();
+    if (numberLetters < 0) {
+        alert("не может быть отрицательным");
+        return;
+    }
+        send(ajaxAPI.bd.string + `?number=${numberLetters}`, "GET");
+}
 
-jQuery(function ($) {
-    $("#delEntity").submit(function (e) {
-        e.preventDefault();
-        $("#dismissButton").click();
-        var answerKit = new AnswerKit(
-            $("#delId").val(), null
-        );
-        send("/constructor/answerKit", "DELETE", answerKit);
-    });
-});
-
-
-jQuery(function ($) {
-    $("#putEntity").submit(function (e) {
-        e.preventDefault();
-
-        var answerKit = new AnswerKit(
-            $('#id').val(),
-            $("#name").val(),
-            $('#answerType').val()
-
-        );
-        send("/constructor/answerKit", "PUT", answerKit);
-        document.getElementById('name').value = "";
-    });
-});
