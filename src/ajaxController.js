@@ -1,12 +1,17 @@
-
 var express = require('express');
+var generator = require('./generator');
+
 class AjaxController {
 
     getGeneratedNumber() {
         const router = express.Router();
         router.get('/', function (req, res, next) {
+
             let numberFrom = req.param("numberFrom");
             let numberTo = req.param("numberTo");
+
+            generator.generateIntegers(numberFrom, numberTo);
+
             res.send(`generate - [${numberFrom},${numberTo}]`);
         });
         return router;
@@ -17,6 +22,8 @@ class AjaxController {
 
         router.get('/', function (req, res, next) {
             let numberLetters = req.param("number");
+            console.log(numberLetters);
+            generator.generateString(numberLetters);
             res.send(`generate${numberLetters}`);
         });
         return router;
