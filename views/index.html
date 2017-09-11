@@ -25,46 +25,63 @@
             <ul>
                 <li>
                     <ul>
-                        <p class="text-center">Получить и сохранить</p>
+                        <p class="text-center">Работа с числами</p>
+
                         <li class="row">
-                            <div class="col-xs-3">
-                                <button class="btn btn-success" onclick="getGeneratedNumber()">Число</button>
+                            <div class="col-xs-6">
+                                <button class="btn btn-success" onclick="getGeneratedNumber()">Сгенерировать</button>
                             </div>
-                            <div class="col-xs-9"></div>
+
+                            <div class="col-xs-6">
+                                <button class="btn btn-success" onclick="getBDNumber()">Достать из БД</button>
+                            </div>
                         </li>
                         <li class="row">
-                            <div class="col-xs-3">
-                                <button class="btn btn-success" onclick="getGeneratedString()">Строку</button>
+                            <div class="col-xs-6">
+                                <div class="input-group">
+                                    <input id="numberFrom" type="number" class="form-control"
+                                           placeholder="От">
+                                </div>
                             </div>
-                            <div class="col-xs-9"></div>
+                            <div class="col-xs-6">
+                                <div class="input-group">
+                                    <input id="numberTo" type="number" class="form-control"
+                                           placeholder="До">
+                                </div>
+                            </div>
                         </li>
+                        </li>
+
+                        <li class="row">
+
+                        </li>
+
+
                     </ul>
                 </li>
 
                 <li>
-                    <ul><p class="text-center">Достать из базы</p>
+                    <ul>
+
+                        <p class="text-center">Работа со строками</p>
+
                         <li class="row">
-                            <div class="col-xs-3">
-                                <button class="btn btn-success" onclick="getBDNumber()">Число</button>
+                            <div class="col-xs-6">
+                                <button class="btn btn-success" onclick="getGeneratedString()">Сгенерировать</button>
                             </div>
-                            <div class="col-xs-9">
-                                <div class="input-group">
-                                    <input id="numberFrom" type="number" class="form-control" placeholder="нижняя граница">
-                                </div>
-                                <div class="input-group">
-                                    <input id="numberTo" type="number" class="form-control" placeholder="верхняя граница">
-                                </div>
+
+                            <div class="  col-xs-6">
+                                <button class="btn btn-success" onclick="getBDString()">Достать из БД</button>
                             </div>
                         </li>
+
                         <li class="row">
-                            <div class="col-xs-3">
-                                <button class="btn btn-success" onclick="getBDString()">Строку</button>
-                            </div>
 
 
-                            <div class="col-xs-9">
+                            <div class=" col-xs-offset-3 col-xs-6">
                                 <div class="input-group">
-                                    <input id="numberLetters" type="number" class="form-control" placeholder="количество букв" >
+                                    <input id="numberLetters" type="number" class="form-control"
+                                           placeholder="Кол-во букв">
                                 </div>
 
                             </div>

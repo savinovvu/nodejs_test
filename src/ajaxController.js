@@ -1,12 +1,13 @@
 
 var express = require('express');
-class Controller {
+class AjaxController {
 
     getGeneratedNumber() {
         const router = express.Router();
-
         router.get('/', function (req, res, next) {
-            res.send('getGeneratedNumber');
+            let numberFrom = req.param("numberFrom");
+            let numberTo = req.param("numberTo");
+            res.send(`generate - [${numberFrom},${numberTo}]`);
         });
         return router;
     }
@@ -15,7 +16,8 @@ class Controller {
         const router = express.Router();
 
         router.get('/', function (req, res, next) {
-            res.send('getGeneratedString');
+            let numberLetters = req.param("number");
+            res.send(`generate${numberLetters}`);
         });
         return router;
     }
@@ -44,4 +46,4 @@ class Controller {
 
 }
 
-module.exports = new Controller();
+module.exports = new AjaxController();

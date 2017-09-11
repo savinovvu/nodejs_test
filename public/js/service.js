@@ -1,9 +1,21 @@
 function getGeneratedNumber() {
-    send(ajaxAPI.generate.number, "GET");
+    var numberFrom = $("#numberFrom").val();
+    var numberTo = $("#numberTo").val();
+    if (numberFrom > numberTo) {
+        alert("некорректный диапазон выборки, переставьте местами значения");
+        return;
+    }
+
+    send(ajaxAPI.generate.number + `?numberFrom=${numberFrom}&numberTo=${numberTo}`, "GET");
 }
 
 function getGeneratedString() {
-    send(ajaxAPI.generate.string, "GET");
+    var numberLetters = $("#numberLetters").val();
+    if (numberLetters < 0) {
+        alert("не может быть отрицательным");
+        return;
+    }
+    send(ajaxAPI.generate.string + `?number=${numberLetters}`, "GET");
 }
 
 function getBDNumber() {

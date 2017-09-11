@@ -7,3 +7,7 @@ body {
 li:not(:first-child) {
   margin-top: 10px ;
 }
+
+.btn{
+    width:100%;
+}
