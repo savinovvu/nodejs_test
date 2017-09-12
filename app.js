@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 
 var pageController = require('./src/pageController');
 var controller = require('./src/ajaxController');
-
+var repository = require('./src/repository');
+repository.init();
 
 var app = express();
 
