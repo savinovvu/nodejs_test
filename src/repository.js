@@ -7,7 +7,7 @@ class Repository {
     init() {
         db.none("CREATE TABLE IF NOT EXISTS strings(id SERIAL NOT NULL, info varchar(255) NOT NULL)")
             .then(db.none("CREATE TABLE IF NOT EXISTS digits(id SERIAL NOT NULL, info Integer NOT NULL)"))
-            .then(() => console.log("good"), (err) => console.log(err));
+            .then(() => console.log("db init-ed"), (err) => console.log(err));
     }
 
     addString(added) {
