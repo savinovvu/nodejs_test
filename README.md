@@ -23,7 +23,7 @@ signs. And displaying them.
 
 RUS
 
-Это тестовый Node.js прокт. Использованные технологии:
+Это тестовый Node.js проект. Использованные технологии:
 1. Клиентская сторона: jade, html, css, bootstrap, js, jQuery, ajax, datatables.
 2. Серверная сторона: Node.js, Express, morgan, random-org, pg-promise, Postgresql.
 
