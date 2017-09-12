@@ -1,5 +1,5 @@
 var express = require('express');
-var generator = require('./generator');
+var dataGenerator = require('./dataGenerator');
 
 class AjaxController {
 
@@ -10,7 +10,7 @@ class AjaxController {
             let numberFrom = req.param("numberFrom");
             let numberTo = req.param("numberTo");
 
-            generator.generateIntegers(numberFrom, numberTo);
+            dataGenerator.generateIntegers(numberFrom, numberTo);
 
             res.send(`generate - [${numberFrom},${numberTo}]`);
         });
@@ -23,13 +23,13 @@ class AjaxController {
         router.get('/', function (req, res, next) {
             let numberLetters = req.param("number");
             console.log(numberLetters);
-            generator.generateString(numberLetters);
+            dataGenerator.generateString(numberLetters);
             res.send(`generate${numberLetters}`);
         });
         return router;
     }
 
-    getBDNumber(){
+    getBDNumber() {
         const router = express.Router();
 
         router.get('/', function (req, res, next) {
@@ -40,7 +40,7 @@ class AjaxController {
         return router;
     }
 
-    getBDString(){
+    getBDString() {
         const router = express.Router();
 
         router.get('/', function (req, res, next) {
