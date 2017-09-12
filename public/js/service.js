@@ -1,6 +1,6 @@
 function getGeneratedNumber() {
-    var numberFrom = $("#numberFrom").val();
-    var numberTo = $("#numberTo").val();
+    let numberFrom = $("#numberFrom").val();
+    let numberTo = $("#numberTo").val();
     if (numberTo - numberFrom <= 0) {
         alert("некорректный диапазон выборки");
         return;
@@ -10,7 +10,7 @@ function getGeneratedNumber() {
 }
 
 function getGeneratedString() {
-    var numberLetters = $("#numberLetters").val();
+    let numberLetters = $("#numberLetters").val();
     if (numberLetters < 0) {
         alert("не может быть отрицательным");
         return;
@@ -19,8 +19,8 @@ function getGeneratedString() {
 }
 
 function getBDNumber() {
-    var numberFrom = $("#numberFrom").val();
-    var numberTo = $("#numberTo").val();
+    let numberFrom = $("#numberFrom").val();
+    let numberTo = $("#numberTo").val();
     if (numberTo - numberFrom <= 0) {
         alert("некорректный диапазон выборки");
         return;
@@ -30,7 +30,7 @@ function getBDNumber() {
 }
 
 function getBDString() {
-    var numberLetters = $("#numberLetters").val();
+    let numberLetters = $("#numberLetters").val();
     if (numberLetters < 0) {
         alert("не может быть отрицательным");
         return;

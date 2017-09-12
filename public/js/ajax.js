@@ -1,4 +1,4 @@
-var ajaxAPI = {
+let ajaxAPI = {
 
     "generate": {
         "number": "/getGeneratedNumber",

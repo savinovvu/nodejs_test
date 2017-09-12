@@ -1,5 +1,5 @@
 function view(data) {
-    var table = $('#entityT').DataTable();
+    let table = $('#entityT').DataTable();
     table.destroy();
 
     $('#entityT').DataTable({
