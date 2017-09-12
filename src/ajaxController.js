@@ -38,9 +38,9 @@ class AjaxController {
         router.get('/', function (req, res, next) {
             let numberFrom = req.param("numberFrom");
             let numberTo = req.param("numberTo");
-            repository.getNumber(numberFrom, numberTo).then(data =>
-                res.send(data)
-            )
+            repository.getNumber(numberFrom, numberTo)
+                .then(data => res.send(data)
+                )
         });
         return router;
     }
@@ -50,9 +50,9 @@ class AjaxController {
 
         router.get('/', function (req, res, next) {
             let numberLetters = req.param("number");
-            repository.getString(numberLetters).then(data =>
-                res.send(data)
-            )
+            repository.getString(numberLetters)
+                .then(data => res.send(data)
+                )
         });
         return router;
     }

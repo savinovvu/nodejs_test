@@ -19,8 +19,9 @@ class DataGenerator {
             length: lengthString,
             n: 1,
             characters: "qwertyuiopsadfghjklzxcvbnm1234567890"
-        }).then(
-            sended => result = sended.random.data);
+        })
+            .then(
+                sended => result = sended.random.data);
         console.log("ended " + result);
         return result;
     }
