@@ -37,9 +37,7 @@ class Repository {
         return result.map(val => {
             return {"id": val.id, info: val.info}
         });
-
     }
-
 }
 
 module.exports = new Repository();
