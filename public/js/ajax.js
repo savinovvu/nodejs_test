@@ -11,7 +11,7 @@ var ajaxAPI = {
 };
 
 
-function send(url, type, jsonData, viewFunction,) {
+function send(url, type, jsonData) {
     $.ajax({
 
         url: url,
@@ -19,8 +19,7 @@ function send(url, type, jsonData, viewFunction,) {
         contentType: 'application/json',
         data: JSON.stringify(jsonData),
         success: function (data) {
-            alert(JSON.stringify(data));
-            // viewFunction(data);
+             view(data);
 
         },
         error: function (x) {
