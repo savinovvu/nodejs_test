@@ -20,14 +20,24 @@ class Repository {
             .then(() => console.log("add " + added), (err) => console.log(err));
     }
 
-    getString(numberLetters) {
-        return db.many(`select *from strings WHERE  length(info) = ${numberLetters}`)
-            .then((data) => console.log(data), (err) => console.log(err));
+    async getString(numberLetters) {
+        let result;
+        await db.many(`select *from strings WHERE  length(info) = ${numberLetters}`)
+            .then((data) => result = data, (err) => console.log(err));
+        return result.map(val => {
+            return {"id": val.id, info: val.info}
+        });
     }
 
-    getNumber(numberFrom, numberTo) {
-        return db.many(`select * from digits where info between ${numberFrom} AND ${numberTo}`)
-            .then((data) => console.log(data), (err) => console.log(err));
+    async getNumber(numberFrom, numberTo) {
+        let result;
+        await db.many(`select * from digits where info between ${numberFrom} AND ${numberTo}`)
+            .then((data) => result = data, (err) => console.log(err));
+        console.log(result);
+        return result.map(val => {
+            return {"id": val.id, info: val.info}
+        });
+
     }
 
 }
