@@ -18,7 +18,7 @@ class DataGenerator {
         await random.generateStrings({
             length: lengthString,
             n: 1,
-            characters: "qwertyuiop[]sadfghjkl;'zxcvbnm,.1234567890"
+            characters: "qwertyuiopsadfghjklzxcvbnm1234567890"
         }).then(
             sended => result = sended.random.data)
         console.log("ended " + result);
