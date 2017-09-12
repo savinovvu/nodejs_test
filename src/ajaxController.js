@@ -20,9 +20,8 @@ class AjaxController {
 
         router.get('/', function (req, res, next) {
             let numberLetters = req.param("number");
-            console.log(numberLetters);
-            dataGenerator.generateString(numberLetters);
-            res.send(`generate${numberLetters}`);
+            dataGenerator.generateString(numberLetters).then(data =>
+                res.send(data));
         });
         return router;
     }

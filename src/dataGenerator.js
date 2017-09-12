@@ -7,22 +7,23 @@ class DataGenerator {
     async generateIntegers(from, to) {
         let result;
         await random.generateIntegers({min: from, max: to, n: 1})
-            .then(sended => {
-                result = sended.random.data;
-            });
+            .then(
+                sended => result = sended.random.data);
         console.log("ended" + result);
         return result;
     }
 
-    generateString(lengthString) {
-        return random.generateStrings({
+    async generateString(lengthString) {
+        let result;
+        await random.generateStrings({
             length: lengthString,
             n: 1,
             characters: "qwertyuiop[]sadfghjkl;'zxcvbnm,.1234567890"
-        });
-
+        }).then(
+            sended => result = sended.random.data)
+        console.log("ended " + result);
+        return result;
     }
-
 }
 
 module.exports = new DataGenerator();
