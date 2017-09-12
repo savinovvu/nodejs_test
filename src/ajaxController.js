@@ -1,5 +1,6 @@
 var express = require('express');
 var dataGenerator = require('./dataGenerator');
+var repository = require('./repository');
 
 class AjaxController {
 
@@ -9,8 +10,11 @@ class AjaxController {
 
             let numberFrom = req.param("numberFrom");
             let numberTo = req.param("numberTo");
-            dataGenerator.generateIntegers(numberFrom, numberTo).then(data =>
-                res.send(data));
+            dataGenerator.generateIntegers(numberFrom, numberTo)
+                .then(data => {
+                    repository.addNumber(data[0]);
+                    res.send([{"id": "none", "info": data[0]}])
+                });
         });
         return router;
     }
@@ -20,8 +24,10 @@ class AjaxController {
 
         router.get('/', function (req, res, next) {
             let numberLetters = req.param("number");
-            dataGenerator.generateString(numberLetters).then(data =>
-                res.send(data));
+            dataGenerator.generateString(numberLetters).then(data => {
+                repository.addString(data[0]);
+                res.send([{"id": "none", "info": data[0]}])
+            });
         });
         return router;
     }
@@ -32,7 +38,8 @@ class AjaxController {
         router.get('/', function (req, res, next) {
             let numberFrom = req.param("numberFrom");
             let numberTo = req.param("numberTo");
-            res.send(`[${numberFrom},${numberTo}]`);
+
+            res.send(repository.getNumber(numberFrom,numberTo));
         });
         return router;
     }
@@ -42,7 +49,7 @@ class AjaxController {
 
         router.get('/', function (req, res, next) {
             let numberLetters = req.param("number");
-            res.send(numberLetters);
+            res.send(repository.getString(numberLetters));
         });
         return router;
     }
