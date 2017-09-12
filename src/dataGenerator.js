@@ -9,7 +9,7 @@ class DataGenerator {
         await random.generateIntegers({min: from, max: to, n: 1})
             .then(
                 sended => result = sended.random.data);
-        console.log("ended" + result);
+        console.log("ended " + result);
         return result;
     }
 
@@ -20,7 +20,7 @@ class DataGenerator {
             n: 1,
             characters: "qwertyuiopsadfghjklzxcvbnm1234567890"
         }).then(
-            sended => result = sended.random.data)
+            sended => result = sended.random.data);
         console.log("ended " + result);
         return result;
     }
