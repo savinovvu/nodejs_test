@@ -38,8 +38,9 @@ class AjaxController {
         router.get('/', function (req, res, next) {
             let numberFrom = req.param("numberFrom");
             let numberTo = req.param("numberTo");
-
-            res.send(repository.getNumber(numberFrom,numberTo));
+            repository.getNumber(numberFrom, numberTo).then(data =>
+                res.send(data)
+            )
         });
         return router;
     }
@@ -49,7 +50,9 @@ class AjaxController {
 
         router.get('/', function (req, res, next) {
             let numberLetters = req.param("number");
-            res.send(repository.getString(numberLetters));
+            repository.getString(numberLetters).then(data =>
+                res.send(data)
+            )
         });
         return router;
     }
