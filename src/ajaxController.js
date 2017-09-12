@@ -9,10 +9,8 @@ class AjaxController {
 
             let numberFrom = req.param("numberFrom");
             let numberTo = req.param("numberTo");
-
-            dataGenerator.generateIntegers(numberFrom, numberTo);
-
-            res.send(`generate - [${numberFrom},${numberTo}]`);
+            dataGenerator.generateIntegers(numberFrom, numberTo).then(data =>
+                res.send(data));
         });
         return router;
     }
